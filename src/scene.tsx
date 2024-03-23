@@ -71,17 +71,17 @@ function Model({ scrollProgress, setScrollProgress }: ModelProps) {
 function SceneComponent() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [guiParams, setGuiParams] = useState<GuiParams>({
-    ambientLightIntensity: 2,
-    ambientLightColor: '#008080',
+    ambientLightIntensity: 10,
+    ambientLightColor: '#2fe0e0',
     pointLightTopIntensity: 10,
     pointLightTopColor: '#ffffff',
-    pointLightBottomIntensity: 10,
+    pointLightBottomIntensity: 30,
     pointLightBottomColor: '#ffffff',
     bloomThreshold: 0,
     bloomSmoothing: 0.9,
     depthOfFieldFocusDistance: 0,
     depthOfFieldFocalLength: 0.02,
-    depthOfFieldBokehScale: 2,
+    depthOfFieldBokehScale: 0,
     noiseOpacity: 0.02,
     vignetteOffset: 0.1,
     vignetteDarkness: 1.1,
