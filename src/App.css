@@ -179,8 +179,13 @@ nav > a:hover {
 .content br {
   content: '';
   display: block;
-  margin-top: 5px; /* This might not work as expected */
+  margin-top: 5px;
   border-bottom:1px solid rgba(255, 255, 255, 0.138);
+}
+
+.content hr{
+  border: 1px solid rgba(255, 255, 255, 0);
+  width: 100%;
 }
 
 .content iframe {
@@ -240,7 +245,7 @@ nav > a:hover {
   }
 
   .content p {
-    max-width: 65%; /* Adjusted for smaller screens */
+    max-width: 70%; /* Adjusted for smaller screens */
   }
 
   .content img{

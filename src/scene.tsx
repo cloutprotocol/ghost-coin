@@ -48,6 +48,7 @@ function SceneComponent() {
     section2: false,
     section3: false, // Added an extra section
     section4: false, // Added an extra section
+    section5: false, // Added an extra section
   });
 
   useEffect(() => {
@@ -60,8 +61,9 @@ function SceneComponent() {
         welcomeMessage: scrollPercentage >= 0.1 && scrollPercentage < 0.25, // Starts appearing slightly after scrolling begins
         section1: scrollPercentage >= 0.25 && scrollPercentage < 0.45, // Evenly spaced
         section2: scrollPercentage >= 0.45 && scrollPercentage < 0.65, // Evenly spaced
-        section3: scrollPercentage >= 0.65 && scrollPercentage < 0.85, // Evenly spaced
-        section4: scrollPercentage >= 0.85 && scrollPercentage <= 1.0, // Takes the remaining space to the end
+        section3: scrollPercentage >= 0.65 && scrollPercentage < 0.75, // Evenly spaced
+        section4: scrollPercentage >= 0.75 && scrollPercentage <= .85, // Takes the remaining space to the end
+        section5: scrollPercentage >= 0.85 && scrollPercentage <= 1.1, // Takes the remaining space to the end
       });
     }, 20);
 
@@ -84,31 +86,17 @@ function SceneComponent() {
         </EffectComposer>
         <Html position={[0, 0, -5]}transform>
   {contentVisibility.welcomeMessage && (
-    <div className="content center">
+    <div className="content">
       <h1>Welcome to GH0ST LABS</h1>
       <h2>Hybrid DeFi Incubator</h2>
       <p>Our mission is to continually explore the uncharted territories at the bleeding edge of the Solana ecosystem from Inscription Meta Protocols, to Digital Artifacts, On-chain Generative Art, Public Fair Mints, Hybrid DeFi & beyond. Our Incubator and Accelerator programs aim to help launch the most innovative new hybrid projects including SPL22, SPL404, or even entirely novel custom builds catered to your specific needs.</p>
-      <div style={{ display: 'flex', gap: '20px', alignItems: 'center', justifyContent: 'center' }}>
-      <a target="_blank" href="https://docs.gh0stlabs.io/gh0stc0in/our-legacy-spl22" style={{ color: 'white' }}>
-        <FontAwesomeIcon icon={faBook} size="1x" />
-      </a>
-      <a target="_blank" href="https://twitter.com/GH0STC0IN" style={{ color: 'white' }}>
-        <FontAwesomeIcon icon={faTwitter} size="1x" />
-      </a>
-      <a target="_blank" href="https://t.me/GH0STC0IN" style={{ color: 'white' }}> {/* Corrected Telegram URL */}
-        <FontAwesomeIcon icon={faTelegram} size="1x" />
-      </a>
-      <a target="_blank" href="https://discord.com/invite/RgtFus49A2" style={{ color: 'white' }}>
-        <FontAwesomeIcon icon={faDiscord} size="1x" />
-      </a>
-    </div>
       <nav>
         <a href="#about">Next Page <i className="fa-solid fa-angle-right"></i></a>
       </nav>
     </div>
   )}
   {contentVisibility.section1 && (
-    <div className="content center">
+    <div className="content">
       <h1>What is Hybrid DeFi?</h1>
       <h2></h2>
       <div id="videoLoader" className="loader">
@@ -122,19 +110,19 @@ function SceneComponent() {
     </div>
   )}
   {contentVisibility.section2 && (
-    <div className="content center">
+    <div className="content">
       <h1>Our Legacy:SPL22</h1>
       <p>GH0ST LABS grew out of the need to scale and expand the GH0STC0IN ecosystem, which originally launched as a free mint with no utility, no roadmap, just the first SPL22 proof of concept. 
-      <br></br>
+      <hr></hr>
 SPL22 is a Hybrid DeFi meta-protocol built on top of SPL20 & Token Extensions (formerly known as Token2022) powered by LibrePlex. 
-<br></br>
+<hr></hr>
 Unlike SPL20, SPL22 does not rely on any centralized 3rd party entities and is 100% free of protocol level fees to mint NFTs by utilizing Token Extension Metadata. This eliminates the 0.023 SOL mint fee that was associated with SPL20 Metaplex NFTs. For a 21,000 supply collection, that's ~480 SOL saved. This allows us to frictionlessly introduce a 0.02 SOL LP mint fee to crowdfund a liquidity pool enabling immediate DEX trading upon launch without the need for startup capital or pre-sale.  </p>
 <div className="flex-container">
       <h3>Tokenomics:<br></br>
 Total Supply: 21,000,000<br></br>
 NFT Supply: 21,000<br></br>
 Tokens per NFT: 1,000<br></br>
-Mint Distribution: 90% Public | 10% LP</h3><br></br>
+Mint Distribution: 90% Public | 10% LP</h3>
 <img width={250} src="https://docs.gh0stlabs.io/~gitbook/image?url=https:%2F%2F1244097569-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FsfMfBheZZUz1xt4DF9fv%252Fuploads%252F5nyUA2hhx4t59QL9lGyL%252Fgh0stpiechart.png%3Falt=media%26token=4789b641-1cd1-414a-869d-30b84281bffd&width=768&dpr=2&quality=100&sign=f254c1eb18142650d499b525a1a24a0fb6b14213c5410ce32200b89dc36de760"></img>
       <nav>
         <a href="#about"><i className="fa-solid fa-angle-left"></i> Previous Page</a> &bull; <a href="#other">Next Page <i className="fa-solid fa-angle-right"></i></a>
@@ -142,7 +130,7 @@ Mint Distribution: 90% Public | 10% LP</h3><br></br>
     </div></div>
   )}
   {contentVisibility.section3 && (
-    <div className="content center">
+    <div className="content">
       <h1>Incubator</h1>
       <h2>Our Incubator Program</h2>
       <p>is aimed at teams and individuals looking to launch their Hybrid DeFi project who do not have a pre-built product. We can help you from every step of the process including developing & deploying the on-chain framework for your hybrid asset, advisory on the Tokenomics, Mint pricing, Branding & Go-To Market Strategy in addition to ongoing advisory for the continued growth of your project beyond the launch. Founders do not need any startup capital or developers to launch their project with our Incubator program, just an innovative idea & a full-time schedule they can dedicate.
@@ -155,7 +143,7 @@ There is no up-front cost for project founders and the specific structure of eac
   )}
   {/* Assuming you add a visibility control for the accelerator section */}
   {contentVisibility.section4 && (
-    <div className="content center">
+    <div className="content">
       <h1>Accelerator</h1>
       <h2>Our Accelerator Program</h2>
       <p>is aimed at teams looking to launch their Hybrid DeFi project who have a pre-built product that is 80% or more of the way ready to launch. We can help you to fine tune nearly every aspect of your project including advisory on the Tokenomics, Mint pricing, Branding & Go-To Market Strategy in addition to ongoing advisory for the continued growth of your project beyond the launch. Founders do not need any startup capital to launch their project with our Accelerator program, just an innovative product that is nearly ready to launch and the team dedicated to its success. 
@@ -166,8 +154,29 @@ There is no up-front cost for project founders and the specific structure of eac
       <nav>
         <a href="#other"><i className="fa-solid fa-angle-left"></i> Previous Page</a>
       </nav>
-      <BackToTopButton />
     </div>
+  )}
+  {contentVisibility.section5 && (
+    <div className="content">
+      <h1>LINKS</h1>
+      <h2>learn more</h2>
+<div style={{ display: 'flex', gap: '20px', alignItems: 'center', justifyContent: 'center' }}>
+<a target="_blank" href="https://docs.gh0stlabs.io/gh0stc0in/our-legacy-spl22" style={{ color: 'white' }}>
+  <FontAwesomeIcon icon={faBook} size="1x" />
+</a>
+<a target="_blank" href="https://twitter.com/GH0STC0IN" style={{ color: 'white' }}>
+  <FontAwesomeIcon icon={faTwitter} size="1x" />
+</a>
+<a target="_blank" href="https://t.me/GH0STC0IN" style={{ color: 'white' }}> {/* Corrected Telegram URL */}
+  <FontAwesomeIcon icon={faTelegram} size="1x" />
+</a>
+<a target="_blank" href="https://discord.com/invite/RgtFus49A2" style={{ color: 'white' }}>
+  <FontAwesomeIcon icon={faDiscord} size="1x" />
+</a>
+</div>
+<BackToTopButton />
+</div>
+
   )}
 </Html>
 
